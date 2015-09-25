@@ -1,20 +1,20 @@
 A = str(input())
 n = int(input())
-if A == "óòþã":
+if A == "ÑƒÑ‚ÑŽÐ³":
     if n>=0:
           a=n%10
           if a == 0 or 5<=a<=9 or n%100==11 or n%100==12 or n%100==13 or n%100==14:
-            print (n, "óòþãîâ")
+            print (n, "ÑƒÑ‚ÑŽÐ³Ð¾Ð²")
           elif a == 1:
-            print (n, "óòþã") 
+            print (n, "ÑƒÑ‚ÑŽÐ³") 
           elif (2<=a<=4 and n%100!=12) or (2<=a<=4 and n%100!=13) or (2<=a<=4 and n%100!=14):
-            print (n, "óòþãà")
-if A == "ëîæêà":
+            print (n, "ÑƒÑ‚ÑŽÐ³Ð°")
+if A == "Ð»Ð¾Ð¶ÐºÐ°":
     if n>=0:
           a=n%10
           if a == 0 or 5<=a<=9 or n%100==11 or n%100==12 or n%100==13 or n%100==14:
-            print (n, "ëîæåê")
+            print (n, "Ð»Ð¾Ð¶ÐµÐº")
           elif a == 1:
-            print (n, "ëîæêà") 
+            print (n, "Ð»Ð¾Ð¶ÐºÐ°") 
           elif (2<=a<=4 and n%100!=12) or (2<=a<=4 and n%100!=13) or (2<=a<=4 and n%100!=14):
-            print (n, "ëîæêè")
+            print (n, "Ð»Ð¾Ð¶ÐºÐ¸")
