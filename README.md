@@ -1,1 +1,1 @@
-# python-course
+# Nesterov Andrei
