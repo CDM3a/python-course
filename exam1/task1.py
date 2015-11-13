@@ -1,24 +1,32 @@
 input_file = open("yazkora.txt", "r")
+answer = open("answer.txt", "w")
 
 text = ""
 for line in input_file:
     line = line.strip()
-    text += line
+    text += line + " "
 
 sentences = text.split(".")
 
-
-words = ""
+for i in range(len(sentences)):
+    if sentences[i] == "":
+        del sentences[i]
 
 for i in range(len(sentences)):
-    words = sentences[i].split(" ")
+    SNTC = sentences[i].strip()
+    words = SNTC.split(" ")
+    out_sent = ""
     for k in range(len(words)):
-        ending = words[k]
-        END = ending[-1] + ending [-2]
-        if END == "yo":
-            print (ending)
+        word = words[k]
+        ending = word[-2:]
+        if ending == "yo":
+            out_sent += word + " "
+    answer.write(out_sent + "\n")
 
-#Надо убрать пробелы при считывании в предложения и доделать цикл, но не успел
+input_file.close()
+answer.close()
+
+
 
 
 
