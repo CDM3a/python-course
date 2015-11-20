@@ -23,8 +23,8 @@ adjective = adjective.split()
 noun = noun.split()
 verb = verb.split()
 
-c = len(noun)*len(verb)
-a = len(adjective)
+comb_noun_verb = len(noun)*len(verb)
+comb_adj = len(adjective)
 
 
 def factorial(x):
@@ -43,13 +43,13 @@ def combinations(n, k):
 
 combination = 0
 
-if a < 8:
-    for i in range(1, a+1):
-        combination += combinations(a, i)
+if comb_adj < 8:
+    for i in range(1, comb_adj+1):
+        combination += combinations(comb_adj, i)
 else:
     for i in range(1, 8):
-        combination += factorial(a) / combinations(a, i)
+        combination += factorial(comb_adj) / combinations(comb_adj, i)
 
 
-out = int(combination * c)
+out = int(combination * comb_noun_verb)
 print(out)
