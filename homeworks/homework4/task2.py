@@ -34,12 +34,7 @@ def factorial(x):
     return(F)
 
 def combinations(n, k):
-    if k > n:
-        return 0
-    elif n == k or k == 0:
-        return 1
-    else:
-        return (factorial(n)/(factorial(k)*factorial(n-k)))
+        return (factorial(n)/(factorial(n - k)))
 
 combination = 0
 
