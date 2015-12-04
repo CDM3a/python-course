@@ -15,3 +15,4 @@ for i in range(len(code_lines)):
             for k in range(len(vars_m)):
                 var_list += vars_m[k]
             print(i+1, var_list)
+
