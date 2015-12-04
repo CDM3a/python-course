@@ -12,3 +12,4 @@ for i in range(len(numbers)):
         nice_num = re.findall(A, numbers[i])
         if nice_num:
             print(numbers[i])
+
