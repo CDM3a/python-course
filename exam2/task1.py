@@ -17,12 +17,12 @@ for i in range(len(result)):
         if whispered: whispers = re.findall("[A-Z]\w+", whispered[0]) 
         whisps = whisps + whispers
         
-        def uniq(input): 
-          output = [] 
-          for x in input: 
-            if x not in output: 
-              output.append(x) 
-          return output
+  def uniq(input): 
+    output = [] 
+    for x in input: 
+      if x not in output: 
+        output.append(x) 
+    return output
           
   Max = []
   
