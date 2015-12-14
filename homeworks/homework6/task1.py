@@ -23,11 +23,15 @@ def wiki_urls(URL):
         ea = list(dict.values(dict(element.attrib)))
         for i in range(len(ea)):
             if ea[i] == "content":
-                div = etree.tostring(element, encoding="unicode", method="html")
+                div = etree.tostring(element,
+                                     encoding="unicode",
+                                     method="html")
                 reg1 = re.findall("<a\s+(?:[^>]*?\s+)?href=\"([^\"]*)\"", div)
                 for k in range(len(reg1)):
                     regp = re.findall("/wiki/", reg1[k])
-                    regn = re.findall("/wiki/((Help)|(File)|(Wikipedia)|(Category)|(Portal)|(Template)|(Special))", reg1[k])
+                    regn = re.findall("/wiki/((Help)|(File)|(Wikipedia)|"
+                                      "(Category)|(Portal)|"
+                                      "(Template)|(Special))", reg1[k])
                     if regp and not regn:
                         if "#" in reg1[k]:
                             regc = re.findall("(.+)#", reg1[k])
@@ -50,21 +54,22 @@ def search_link_in_three_clicks(urlstart, urltarget):
 
     urls_list1 = wiki_urls(urlstart)
     found_path = ""
-    
-    #click 1
+
+    # click 1
     for i in range(len(urls_list1)):
         if urls_list1[i] == urltarget:
-            found_path = urlstart+"\n"+urls_list1[i]
+            found_path = urlstart + "\n" + urls_list1[i]
             break
-    #click2
+    # click2
     if not found_path:
         for i in range(len(urls_list1)):
             urls_list2 = wiki_urls(urls_list1[i])
             for k in range(len(urls_list2)):
                 if urls_list2[k] == urltarget:
-                    found_path = urlstart+"\n"+urls_list1[i]+"\n"+urls_list2[k]
+                    found_path = urlstart + "\n" + urls_list1[i] + "\n" + \
+                                 urls_list2[k]
                     break
-    #click 3
+    # click 3
     if not found_path:
         for i in range(len(urls_list1)):
             urls_list2 = wiki_urls(urls_list1[i])
@@ -72,7 +77,8 @@ def search_link_in_three_clicks(urlstart, urltarget):
                 urls_list3 = wiki_urls(urls_list2[k])
                 for j in range(len(urls_list3)):
                     if urls_list3[j] == URLTARGET:
-                        found_path = URLSTART+"\n"+urls_list1[i]+"\n"+urls_list2[k]+"\n"+urls_list3[j]
+                        found_path = URLSTART + "\n" + urls_list1[i] + "\n" + \
+                                     urls_list2[k]+"\n"+urls_list3[j]
                         break
 
     if found_path:
