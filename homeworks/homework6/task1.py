@@ -43,7 +43,7 @@ def wiki_urls(URL):
             UREG[i] = start_url + UREG[i]
     else:
         UREG = []
-    return(UREG)
+    return UREG
 
 
 def search_link_in_three_clicks(urlstart, urltarget):
@@ -76,9 +76,9 @@ def search_link_in_three_clicks(urlstart, urltarget):
                         break
 
     if found_path:
-        return(found_path)
+        return found_path
     else:
-        return("Not Found in 3 clicks")
+        return "Not Found in 3 clicks"
 
 
 URLSTART = 'https://en.wikipedia.org/wiki/Gone_Maggie_Gone'
